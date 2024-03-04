@@ -59,8 +59,9 @@
                         break;
                     default: 
                         Console.WriteLine("Invalid entry. Please try again!");
-                        break;
-                }              
+                        continue;
+                }
+                break;
             }
         }
     }
