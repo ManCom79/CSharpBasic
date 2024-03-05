@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SumOfEvenNumbers", "SumOfEv
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentGroup", "StudentGroup\StudentGroup.csproj", "{CE1DB4A7-5262-4036-B11D-0E50037C9636}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeclareDiffDataTypesArryas", "DeclareDiffDataTypesArryas\DeclareDiffDataTypesArryas.csproj", "{353CCBBC-03EA-4294-A80A-0979A6DB1C57}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{CE1DB4A7-5262-4036-B11D-0E50037C9636}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CE1DB4A7-5262-4036-B11D-0E50037C9636}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CE1DB4A7-5262-4036-B11D-0E50037C9636}.Release|Any CPU.Build.0 = Release|Any CPU
+		{353CCBBC-03EA-4294-A80A-0979A6DB1C57}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{353CCBBC-03EA-4294-A80A-0979A6DB1C57}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{353CCBBC-03EA-4294-A80A-0979A6DB1C57}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{353CCBBC-03EA-4294-A80A-0979A6DB1C57}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
