@@ -28,11 +28,18 @@
                             break;
                         }
 
+                        if (userInput == "n")
+                        {
+                            break;
+                        }
+
                         if (userInput != "y" || userInput != "n")
                         {
                             Console.WriteLine("Please enter Y or N.");
                             continue;
                         }
+
+
                     }
 
                 }
