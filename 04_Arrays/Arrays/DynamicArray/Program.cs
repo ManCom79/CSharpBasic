@@ -41,7 +41,7 @@
                     break;
                 }
             }
-
+            Console.WriteLine("The names entered in the array are:");
             foreach (string name in names)
             {
                 Console.WriteLine(name);
