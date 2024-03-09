@@ -155,14 +155,12 @@
 
         public static int CalculateAge(DateTime dateOfBirth)
         {
-            int age;
             DateTime currentDate = DateTime.Today;
-            int years = currentDate.Year - dateOfBirth.Year;
-            if (dateOfBirth > currentDate.AddYears(-years))
+            int age = currentDate.Year - dateOfBirth.Year;
+            if (dateOfBirth > currentDate.AddYears(-age))
             {
-                years--;
+                age--;
             }
-            age = years;
             return age;
         }
     }
