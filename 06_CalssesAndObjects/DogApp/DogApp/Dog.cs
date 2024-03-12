@@ -26,7 +26,7 @@
 
         public string ChaseTail()
         {
-            string message = $"{Name} is now chasing it's tail";
+            string message = $"{Name} is now chasing its tail.";
             return message;
         }
     }

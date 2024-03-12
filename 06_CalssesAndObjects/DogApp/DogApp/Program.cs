@@ -17,14 +17,21 @@
 
             while (true)
             {
-                Console.WriteLine($"Please enter number");
+                Console.WriteLine($"Please enter number 1, 2 or 3");
                 string userInput = Console.ReadLine();
 
                 if(!int.TryParse(userInput, out userNumber))
                 {
-                    Console.WriteLine("Please enter a number");
+                    Console.WriteLine("You have not entered a number.");
                     continue;
                 }
+
+                if (userNumber < 1 || userNumber > 3)
+                {
+                    Console.WriteLine("Number you entered was not 1, 2 or 3.");
+                    continue;
+                }
+
                 break;  
             }
 
