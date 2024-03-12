@@ -14,20 +14,17 @@
 
         public string Eat()
         {
-            string message = $"{Name} is now eating.";
-            return message;
+            return $"{Name} is now eating.";
         }
 
         public string Play()
         {
-            string message = $"{Name} is now playing.";
-            return message;
+            return $"{Name} is now playing.";
         }
 
         public string ChaseTail()
         {
-            string message = $"{Name} is now chasing its tail.";
-            return message;
+            return $"{Name} is now chasing its tail.";
         }
     }
 }
