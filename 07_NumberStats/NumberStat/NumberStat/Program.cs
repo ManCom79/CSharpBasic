@@ -35,6 +35,7 @@
                         Console.WriteLine("Please enter Y or N.");
                         continue;
                     }
+                    break;
                 }
 
                 if (continueChoise.ToLower() == "n")
