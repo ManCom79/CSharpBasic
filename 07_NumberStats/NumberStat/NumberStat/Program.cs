@@ -9,7 +9,7 @@
             {
                 Console.WriteLine("Please enter a number:");
                 string userInput = Console.ReadLine();
-                
+                string continueChoise;
 
                 if (decimal.TryParse(userInput, out decimal enteredNumberInteger))
                 {
@@ -21,22 +21,26 @@
                     continue;
                 }
 
-                Console.WriteLine("Would you like to enter another numner (y/n)?");
-                string continueChoise = Console.ReadLine();
+                while (true)
+                {
+                    Console.WriteLine("Would you like to enter another numner (y/n)?");
+                    continueChoise = Console.ReadLine();
 
-                if (continueChoise.ToLower() == "y")
-                {
-                    continue;
-                } else
-                {
-                    break;
+                    if (continueChoise.ToLower() == "y")
+                    {
+                        break;
+                    }
+                    if (continueChoise != "y" && continueChoise != "n")
+                    {
+                        Console.WriteLine("Please enter Y or N.");
+                        continue;
+                    }
                 }
 
                 if (continueChoise.ToLower() == "n")
                 {
                     break;
                 }
-
                 
             }
                 
