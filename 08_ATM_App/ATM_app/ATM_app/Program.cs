@@ -11,8 +11,9 @@ namespace ATM_app
             bool userFound = false;
             bool restrtApp = false;
 
-            Customer customer1 = new Customer("Bob", "Bobsky", 1234123412341234, 123, 1000000);
-            Customer[] customers = new Customer[] { customer1 };
+            Customer customer1 = new Customer("Bob", "Bobsky", 1234123412341234, 123, 1000);
+            Customer customer2 = new Customer("Jane", "Doe", 1111222233334444, 111, 1500);
+            Customer[] customers = new Customer[] { customer1, customer2 };
 
             Console.WriteLine("Welcome to the ATM app");
 
@@ -35,6 +36,20 @@ namespace ATM_app
                     continue;
                 }
 
+                int counter = 0;
+                foreach (Customer customer in customers)
+                {
+                    if (customerCardNumber == customer.CredicCardNumber)
+                    {
+                        counter += 1;
+                    }
+                }
+
+                if (counter == 0)
+                {
+                    Console.WriteLine("Credit Card with that number does not exist!\n");
+                    continue;
+                }
                 
                 foreach (Customer customer in customers)
                 {
@@ -91,12 +106,6 @@ namespace ATM_app
                             }
                         }
                     }
-                    else
-                    {
-                        Console.WriteLine("User does not exist");
-                        continue;
-                    }
-                    continue;
                 }
 
                 if (restrtApp == true)
@@ -153,6 +162,12 @@ namespace ATM_app
                     continue;
                 }
 
+                if (withdraw > balance)
+                {
+                    Console.WriteLine($"Sorry, you do not have sufficient funds. Your balance is ${balance}.");
+                    continue;
+                }
+
                 if (withdraw < 0)
                 {
                     Console.WriteLine("Withdrawal cannot be less than zero");
@@ -161,7 +176,7 @@ namespace ATM_app
 
                 balance -= withdraw;
 
-                Console.WriteLine($"You have successfully withdrawn ${withdraw}.");
+                Console.WriteLine($"You have successfully withdrawn ${withdraw}. Your balance is now %{balance}.");
                 break;
 
             }
@@ -193,7 +208,7 @@ namespace ATM_app
 
                 balance += deposit;
 
-                Console.WriteLine($"You have successfully deposited ${deposit}.");
+                Console.WriteLine($"You have successfully deposited ${deposit}. Your balance is now %{balance}.");
                 break;
 
             }
