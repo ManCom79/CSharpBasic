@@ -7,7 +7,11 @@
 
         public long CredicCardNumber { get; set; }
 
-        public int CreditCardPin { get; set; }
+        private int _CreditCardPin;
+        public int CreditCardPin { 
+            get => _CreditCardPin; 
+            set => _CreditCardPin = value; 
+        }
 
         public int Balance { get; set; }
 
