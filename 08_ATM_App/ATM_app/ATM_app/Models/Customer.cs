@@ -21,5 +21,7 @@
             CreditCardPin = creditCardPin;
             Balance = balance;
         }
+
+        public Customer() { }
     }   
 }
