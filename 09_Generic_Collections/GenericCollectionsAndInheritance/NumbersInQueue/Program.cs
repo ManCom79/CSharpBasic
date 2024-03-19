@@ -57,7 +57,7 @@
             Console.WriteLine("\nThe numbers in the queue are entered in this order:");
             foreach (int number in numbersQueue)
             {
-                Console.WriteLine(number);
+                Console.WriteLine($"{number}");
             }
         }
     }
