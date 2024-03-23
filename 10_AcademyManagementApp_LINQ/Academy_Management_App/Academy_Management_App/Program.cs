@@ -31,7 +31,7 @@ namespace Academy_Management_App
                 bool teacherUserFound = false;
                 bool studentUserFound = false;
 
-                Console.WriteLine("Welcome to the Academy Management App!\nSelect your role to log in (1, 2 or 3)");
+                Console.WriteLine("Welcome to the Academy Management App!\nSelect your role to log in:\n1. Admin\n2. Teacher\n3. Student");
                 string signedInRole = Console.ReadLine();
 
                 switch (signedInRole)
