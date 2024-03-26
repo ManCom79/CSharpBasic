@@ -26,7 +26,7 @@ namespace Academy_Management_App
             Dictionary<string, int> achievment1 = new Dictionary<string, int>() { { subject1.SubjectTitle, 4 }, { subject2.SubjectTitle, 3} };
             Dictionary<string, int> achievment2 = new Dictionary<string, int>() { { subject1.SubjectTitle, 5 }, { subject3.SubjectTitle, 5} };
             Dictionary<string, int> achievment3 = new Dictionary<string, int>() { { subject2.SubjectTitle, 4 }, { subject3.SubjectTitle, 5} };
-            Dictionary<string, int> achievment4 = new Dictionary<string, int>() { { subject1.SubjectTitle, 3 }, { subject2.SubjectTitle, 4} };
+            Dictionary<string, int> achievment4 = new Dictionary<string, int>() { { subject1.SubjectTitle, 3 }, { subject3.SubjectTitle, 4} };
             Dictionary<string, int> achievment5 = new Dictionary<string, int>() { { subject2.SubjectTitle, 2 }, { subject3.SubjectTitle, 3} };
             Dictionary<string, int> achievment6 = new Dictionary<string, int>() { { subject1.SubjectTitle, 5 }, { subject3.SubjectTitle, 2} };
 

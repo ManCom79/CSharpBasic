@@ -29,6 +29,7 @@ namespace Academy_Management_Class_Library
                         }
                     case "2":
                         {
+                            listSubjectStats(students);
                             break;
                         }
                     case "3":
@@ -71,9 +72,15 @@ namespace Academy_Management_Class_Library
                     { 
                         List<Student> studentFound = students.Where(x => x.Id == studentId).ToList();
                         Console.WriteLine($"Achievments of {studentFound[0].FirstName} {studentFound[0].LastName} are:");
-                        foreach (var subjects in studentFound[0].Achievments)
+                        if (studentFound[0].Achievments.Count == 0)
                         {
-                            Console.WriteLine($"Subject: {subjects.Key}; Grade {subjects.Value}");
+                            Console.WriteLine("NEW STUDENT ENROLMENT!!! No achievments available at the moment.");
+                        } else
+                        {
+                            foreach (var subjects in studentFound[0].Achievments)
+                            {
+                                Console.WriteLine($"Subject: {subjects.Key}; Grade {subjects.Value}");
+                            }
                         }
                         continue;
                     }
@@ -91,6 +98,42 @@ namespace Academy_Management_Class_Library
 
                 
             }
+        }
+
+        public static void listSubjectStats(List<Student> students)
+        {
+            List<string> allSubjects = new List<string>();
+
+            foreach (Student student in students)
+            {
+                foreach(var subject in student.Achievments)
+                {
+                    allSubjects.Add(subject.Key);
+                }
+            }
+
+            List<string> uniqueSubejects = new List<string>();
+            uniqueSubejects = allSubjects.Distinct().ToList();
+
+            Console.WriteLine("Available subcets are:");
+            foreach (string subeject in uniqueSubejects)
+            {
+                Console.WriteLine(subeject);
+            }
+
+            foreach(string subject in uniqueSubejects)
+            {
+                int counter = 0;
+                for (int i = 0; i < allSubjects.Count; i++)
+                {
+                    if (subject == allSubjects[i])
+                    {
+                        counter++;
+                    }
+                }
+                Console.WriteLine($"The subject \"{subject}\" has {counter} students enrolled. ");
+            }
+            selectAction(students);
         }
     }
 }

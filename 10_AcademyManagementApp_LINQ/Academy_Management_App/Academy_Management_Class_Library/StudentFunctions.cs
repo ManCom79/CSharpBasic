@@ -4,9 +4,15 @@
     {
         public static void listSubjcets(Dictionary<string, int> achievments)
         {
-            foreach(var achievment in achievments)
+            if (achievments.Count == 0)
             {
-                Console.WriteLine($"Subject: {achievment.Key}, Grade: {achievment.Value}");
+                Console.WriteLine("NEW STUDENT ENROLMENT!!! No achievments available at the moment.");
+            } else
+            {
+                foreach (var achievment in achievments)
+                {
+                    Console.WriteLine($"Subject: {achievment.Key}, Grade: {achievment.Value}");
+                }
             }
         }
     }
