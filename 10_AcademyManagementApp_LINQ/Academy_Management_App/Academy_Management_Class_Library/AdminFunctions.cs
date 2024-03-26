@@ -3,7 +3,7 @@
     public class AdminFunctions
     {
 
-        public static string selectAdminAction(List<Admin> admins, List<Teacher> teachers, List<Student> students, Admin loggedAdmin)
+        public static string selectAdminAction(List<Admin> admins, List<Teacher> teachers, List<Student> students, Admin loggedAdmin, Dictionary<string, int> subjects)
         {
             while (true)
             {
@@ -14,32 +14,32 @@
                 {
                     case "1":
                         {
-                            AddAdmin(admins, teachers, students, loggedAdmin);
+                            AddAdmin(admins, teachers, students, loggedAdmin, subjects);
                             break;
                         }
                     case "2":
                         {
-                            RemoveAdmin(admins, teachers, students, loggedAdmin);
+                            RemoveAdmin(admins, teachers, students, loggedAdmin, subjects);
                             break;
                         }
                     case "3":
                         {
-                            AddTeacher(admins, teachers, students, loggedAdmin);
+                            AddTeacher(admins, teachers, students, loggedAdmin, subjects);
                             break;
                         }
                     case "4":
                         {
-                            RemoveTeacher(admins, teachers, students, loggedAdmin);
+                            RemoveTeacher(admins, teachers, students, loggedAdmin, subjects);
                             break;
                         }
                     case "5":
                         {
-                            AddStudent(admins, teachers, students, loggedAdmin);
+                            AddStudent(admins, teachers, students, loggedAdmin, subjects);
                             break;
                         }
                     case "6":
                         {
-                            AdminFunctions.RemoveStudent(admins, teachers, students, loggedAdmin);
+                            RemoveStudent(admins, teachers, students, loggedAdmin, subjects);
                             break;
                         }
                     case "7":
@@ -57,7 +57,7 @@
             }
         }
 
-        public static void AddAdmin(List<Admin> admins, List<Teacher> teachers, List<Student> students, Admin loggedAdmin)
+        public static void AddAdmin(List<Admin> admins, List<Teacher> teachers, List<Student> students, Admin loggedAdmin, Dictionary<string, int> subjects)
         {
             Console.WriteLine($"There are {admins.Count} admins now.");
             Console.WriteLine("Please enter admin's first name: ");
@@ -87,18 +87,18 @@
             Admin newAdmin = new Admin(adminId, adminFirstName, adminLastName, adminUserName, adminPassword);
             admins.Add(newAdmin);
             Console.WriteLine($"There are {admins.Count} admins now.");
-            selectAdminAction(admins, teachers, students, loggedAdmin);
+            selectAdminAction(admins, teachers, students, loggedAdmin, subjects);
 
         }
 
-        public static void RemoveAdmin(List<Admin> admins, List<Teacher> teachers, List<Student> students, Admin loggedAdmin)
+        public static void RemoveAdmin(List<Admin> admins, List<Teacher> teachers, List<Student> students, Admin loggedAdmin, Dictionary<string, int> subjects)
         {
             List<int> AdminIds = new List<int>();
 
             if (admins.Count == 1)
             {
                 Console.WriteLine("Sorry, no more admins left to remove.");
-                selectAdminAction(admins, teachers, students, loggedAdmin);
+                selectAdminAction(admins, teachers, students, loggedAdmin, subjects);
             }
 
             while (true)
@@ -136,10 +136,10 @@
                 }
 
             }
-            selectAdminAction(admins, teachers, students, loggedAdmin);
+            selectAdminAction(admins, teachers, students, loggedAdmin, subjects);
         }
 
-        public static void AddTeacher(List<Admin> admins, List<Teacher> teachers, List<Student> students, Admin loggedAdmin)
+        public static void AddTeacher(List<Admin> admins, List<Teacher> teachers, List<Student> students, Admin loggedAdmin, Dictionary<string, int> subjects)
         {
             Console.WriteLine($"There are {teachers.Count} teachers now.");
             Console.WriteLine("Please enter teacher's first name: ");
@@ -169,18 +169,18 @@
             Teacher newTeacher = new Teacher(teacherId, teacherFirstName, teacherLastName, teacherUserName, teacherPassword);
             teachers.Add(newTeacher);
             Console.WriteLine($"There are {teachers.Count} teachers now.");
-            selectAdminAction(admins, teachers, students, loggedAdmin);
+            selectAdminAction(admins, teachers, students, loggedAdmin, subjects);
 
         }
 
-        public static void RemoveTeacher(List<Admin> admins, List<Teacher> teachers, List<Student> students, Admin loggedAdmin)
+        public static void RemoveTeacher(List<Admin> admins, List<Teacher> teachers, List<Student> students, Admin loggedAdmin, Dictionary<string, int> subjects)
         {
             List<int> TeachersIds = new List<int>();
 
             if (teachers.Count == 0)
             {
                 Console.WriteLine("Sorry, no more teachers left to remove.");
-                selectAdminAction(admins, teachers, students, loggedAdmin);
+                selectAdminAction(admins, teachers, students, loggedAdmin, subjects);
             }
 
             while (true)
@@ -219,10 +219,10 @@
             {
                 Console.WriteLine($"ID: {teacher.Id}, {teacher.FirstName} {teacher.LastName}");
             }
-            selectAdminAction(admins, teachers, students, loggedAdmin);
+            selectAdminAction(admins, teachers, students, loggedAdmin, subjects);
         }
 
-        public static void AddStudent(List<Admin> admins, List<Teacher> teachers, List<Student> students, Admin loggedAdmin)
+        public static void AddStudent(List<Admin> admins, List<Teacher> teachers, List<Student> students, Admin loggedAdmin, Dictionary<string, int> subjects)
         {
             Console.WriteLine($"There are {students.Count} students now.");
             Console.WriteLine("Please enter student's first name: ");
@@ -249,20 +249,20 @@
                 break;
             }
 
-            Student newStudent = new Student(studentId, studentFirstName, studentLastName, studentUserName, studentPassword);
+            Student newStudent = new Student(studentId, studentFirstName, studentLastName, studentUserName, studentPassword, subjects);
             students.Add(newStudent);
             Console.WriteLine($"There are {students.Count} students now.");
-            selectAdminAction(admins, teachers, students, loggedAdmin);
+            selectAdminAction(admins, teachers, students, loggedAdmin, subjects);
         }
 
-        public static void RemoveStudent(List<Admin> admins, List<Teacher> teachers, List<Student> students, Admin loggedAdmin)
+        public static void RemoveStudent(List<Admin> admins, List<Teacher> teachers, List<Student> students, Admin loggedAdmin, Dictionary<string, int> subjects)
         {
             List<int> StudentsIds = new List<int>();
 
             if (students.Count == 0)
             {
                 Console.WriteLine("Sorry, no more students left to remove.");
-                selectAdminAction(admins, teachers, students, loggedAdmin);
+                selectAdminAction(admins, teachers, students, loggedAdmin, subjects);
             }
 
             while (true)
@@ -301,7 +301,7 @@
             {
                 Console.WriteLine($"ID: {student.Id}, {student.FirstName} {student.LastName}");
             }
-            selectAdminAction(admins, teachers, students, loggedAdmin);
+            selectAdminAction(admins, teachers, students, loggedAdmin, subjects);
         }
     }
 }

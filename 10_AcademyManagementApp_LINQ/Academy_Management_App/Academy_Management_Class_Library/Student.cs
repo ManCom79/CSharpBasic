@@ -7,15 +7,16 @@
         public string LastName { get; set; }
         public string UserName { get; set; }
         public string Password { get; set; }
+        public Dictionary<string, int> Achievments { get; set; }
 
-        public Student(int id, string firstName, string lastName, string userName, string password)
+        public Student(int id, string firstName, string lastName, string userName, string password, Dictionary<string, int> achievments)
         {
             Id = id;
             FirstName = firstName;
             LastName = lastName;
             UserName = userName;
             Password = password;
-
+            Achievments = achievments;
         }
     }
 }
