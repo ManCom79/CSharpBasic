@@ -2,7 +2,7 @@
 {
     public class UserLoginService
     {
-        public static void UserLogin(string[] emails, string[] passwords)
+        public static string UserLogin(string[] emails, string[] passwords)
         {
             while (true)
             {
@@ -65,9 +65,9 @@
 
                                         if (passwords[emailIndex] == userEnteredPassword)
                                         {
-                                            Console.WriteLine("Welcome!");
+                                            Console.WriteLine("***** Welcome! *****");
                                             userLogged = true;
-                                            break;
+                                            return userEnteredEmail;
                                         }
                                         else
                                         {
