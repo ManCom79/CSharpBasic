@@ -9,8 +9,8 @@ namespace _10_Hero_s_Journey
     {
         static void Main(string[] args)
         {
-            string[] emails = ["a", "player_1@game.com", "player_2@game.com"];
-            string[] passwords = ["a", "play1", "play2"];
+            string[] emails = ["player_1@game.com", "player_2@game.com"];
+            string[] passwords = ["play1", "play2"];
             string loggedUser = UserLoginService.UserLogin(emails, passwords);
 
             while (true)
