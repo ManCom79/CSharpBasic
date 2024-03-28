@@ -105,13 +105,9 @@
                 break;
             };
 
-            Console.WriteLine($"\n\"{characterName}\", the \"{characterRace}\", the \"{characterClass}\".");
-
             int charRaceHealth = races[characterRaceIndex]["Health"];
             int charRaceStrength = races[characterRaceIndex]["Strength"];
             int charRaceAgility = races[characterRaceIndex]["Agility"];
-
-            Console.WriteLine($"\n{characterRace} has health: {charRaceHealth}, strength: {charRaceStrength}, agility: {charRaceAgility}.");
 
             int charClassHealth = classes[characterClassIndex]["Health"];
             int charClassStrength = 0;
@@ -124,11 +120,7 @@
             int charOverallStrength = charRaceStrength + charClassStrength;
             int charOverallAgility = charRaceAgility + charClassAgility;
 
-            Console.WriteLine($"{characterClass} has health: {charClassHealth}, strength: {charClassStrength}, agility: {charClassAgility}.");
-
             GameCharacter player = new GameCharacter(characterName, characterRace, characterClass, charOverallHealth, charOverallStrength, charOverallAgility);
-
-            Console.WriteLine($"\n{player.Name} has health: {charOverallHealth}, strength: {charOverallStrength}, agility: {charOverallAgility}.");
 
             return player;
         }

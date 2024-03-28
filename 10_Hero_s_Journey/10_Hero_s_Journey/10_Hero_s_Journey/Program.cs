@@ -1,5 +1,6 @@
 ﻿using Services;
 using System.Collections.Generic;
+using System.Numerics;
 using System.Runtime.InteropServices;
 
 namespace _10_Hero_s_Journey
@@ -25,7 +26,9 @@ namespace _10_Hero_s_Journey
 
             GameCharacter gameCharacter = GettingCharacterPropertiesService.GettingCharacterProperties(races, classes);
 
-            //Console.WriteLine($"Printing from main: {gameCharacter.Name}, {gameCharacter.Race}, {gameCharacter.CharacterClass}, {gameCharacter.Health}, {gameCharacter.Strength}, {gameCharacter.Agility}");
+            Console.WriteLine($"\n\"{gameCharacter.Name}\", the \"{gameCharacter.Race}\", the \"{gameCharacter.CharacterClass}\".");
+            Console.WriteLine($"{gameCharacter.Name} has health: {gameCharacter.Health}, strength: {gameCharacter.Strength}, agility: {gameCharacter.Agility}.");
+
 
         }
     }
